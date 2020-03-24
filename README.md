@@ -10,7 +10,7 @@ Here we are only checking the login test-case for few possible test-data listed 
 || valid    || blank    || <br>
 || valid    || valid    || <br>
 
-# Limitation or Furure Enhancement
+# Limitation or Future Enhancement
 - Currently supports only Firefox browser.
 - Currently used TestNG parameters to pass the user input. However, we can do it with the help of MS-Excel. 
 - We can add more possibility based on login scenarios.
