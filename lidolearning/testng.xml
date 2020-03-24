@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite_Facebook">
 	<parameter name="url" value="https://www.facebook.com/"></parameter>
-	<parameter name="browser" value="chrome"></parameter>
+	<parameter name="browser" value="firefox"></parameter>
 	<parameter name="userName" value="a"></parameter>
 	<parameter name="password" value="b"></parameter>
 	<test thread-count="5" name="TC_FB_Login">
