@@ -43,10 +43,12 @@ public class FB_Login {
 	}
 
 	public void typeUserName(String userName) {
+		driver.findElement(this.userName).clear();
 		driver.findElement(this.userName).sendKeys(userName);
 	}
 
 	public void typePassword(String password) {
+		driver.findElement(this.password).clear();
 		driver.findElement(this.password).sendKeys(password);
 	}
 
