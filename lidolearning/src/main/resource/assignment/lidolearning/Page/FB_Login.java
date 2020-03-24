@@ -30,6 +30,8 @@ public class FB_Login {
 	By fb_HomeIcon = By.xpath("//a[text()='Home']");
 	By fb_logoutArrow = By.id("userNavigationLabel");
 	By fb_logoutButton = By.xpath("//span[text()='Log Out']");
+	By err_username = By.xpath("//a[text()='Sign up for an account.']");
+	By err_password = By.xpath("//a[text()='Forgotten password?']");
 
 	public void loginWithValidCredential(String userName, String password) {
 		this.typeUserName(userName);
@@ -63,5 +65,30 @@ public class FB_Login {
 		driver.findElement(this.fb_logoutButton).click();
 		WebDriverWait wait = basePage.waitInstance(driver, 50);
 		wait.until(ExpectedConditions.titleContains("Facebook"));
+	}
+
+	public void loginWithInValidCredential(String userName, String password) {
+		WebDriverWait wait = basePage.waitInstance(driver, 50);
+		if ((userName.equalsIgnoreCase("") && password.equalsIgnoreCase(""))) {
+			System.out.println("Checking when both the fields are marked empty");
+			this.clickFBLoginButton();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(err_username));
+		} else if ((userName.equalsIgnoreCase("") && password.equalsIgnoreCase("inValid"))) {
+			System.out.println("Checking when userName is empty with Invalid Password");
+			typePassword(password);
+			this.clickFBLoginButton();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(err_username));
+		} else if ((userName.equalsIgnoreCase("inValid") && password.equalsIgnoreCase("inValid"))) {
+			System.out.println("Checking when both the fields are marked as Invalid");
+			typeUserName(userName);
+			typePassword(password);
+			this.clickFBLoginButton();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(err_username));
+		} else if (password.equalsIgnoreCase("")) {
+			System.out.println("Checking when valid UserName with empty Password");
+			typeUserName(userName);
+			this.clickFBLoginButton();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(err_password));
+		}
 	}
 }

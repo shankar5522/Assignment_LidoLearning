@@ -7,6 +7,8 @@
 	<parameter name="password" value="yourPassword"></parameter>
 	<parameter name="emptyUserName" value=""></parameter>
 	<parameter name="emptypassword" value=""></parameter>
+	<parameter name="inValidUserName" value="invalid"></parameter>
+	<parameter name="inValidpassword" value="invalid"></parameter>
 	<test thread-count="5" name="TC_FB_Login">
     <classes>
       <class name="assignment.lidolearning.TC_FB_Login"/>

@@ -24,9 +24,24 @@ public class TC_FB_Login {
 	}
 
 	@Test
-	@Parameters({ "userName", "password", "emptyUserName", "emptypassword" })
-	public void fb_login(String userName, String password, String emptyUserName, String emptypassword) {
+	@Parameters({ "userName", "password", "emptyUserName", "emptypassword", "inValidUserName", "inValidpassword" })
+	public void fb_login(String userName, String password, String emptyUserName, String emptypassword,
+			String inValidUserName, String inValidpassword) throws InterruptedException {
+		//When both fields are empty
+		//loginPage.loginWithInValidCredential(emptyUserName, emptypassword);
+		Thread.sleep(3);
+
+		//When UserName is mark as empty and with invalid password
+		//loginPage.loginWithInValidCredential(emptyUserName, inValidpassword);
+		//Thread.sleep(3);
+
+		//When valid userName with empty password
+		//loginPage.loginWithInValidCredential(userName, emptypassword);
+		//Thread.sleep(3);
+
+		//When both fields are mark as valid
 		loginPage.loginWithValidCredential(userName, password);
+		//Thread.sleep(3);
 	}
 
 	@AfterTest
