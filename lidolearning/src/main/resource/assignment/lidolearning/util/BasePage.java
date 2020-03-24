@@ -3,10 +3,11 @@
  */
 package assignment.lidolearning.util;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 /**
@@ -20,7 +21,9 @@ public class BasePage {
 	public void loadURL(String url) {
 		driver.get(url);
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		WebDriverWait wait = waitInstance(driver, 55);
+		wait.until(ExpectedConditions.titleContains("Facebook"));
+
 	}
 
 	public WebDriver loadDriver(String browser) {
@@ -33,4 +36,9 @@ public class BasePage {
 		return driver;
 	}
 
+	public WebDriverWait waitInstance(WebDriver driver, long timeOutInSeconds) {
+		WebDriverWait wait = null;
+		wait = new WebDriverWait(driver, timeOutInSeconds);
+		return wait;
+	}
 }
