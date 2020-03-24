@@ -26,7 +26,7 @@ Below are the few packages/ software should install in you system before running
 # Built With
 - The project is designed in Java Language using Data driven framework.
 
-#Installation
+# Installation
 Below are the steps that we need to follow in order to run the project
  - [Clone](https://github.com/shankar5522/Assignment_LidoLearning.git) the project into you local system
  - Navigate to **testng.xml** file and change the value according to your Facebook credential for **userName** and **Password** Parameters.
