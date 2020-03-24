@@ -33,7 +33,7 @@ Below are the steps that we need to follow in order to run the project
  - Right click on **testng.xml** file then Select **Run as TestNG Suite.**
  
 # Authors
-  - Shankar Gupta - **[GitHub profile](https://github.com/shankar5522/Assignment_LidoLearning.git)**
+  - Shankar Gupta - **[GitHub profile](https://github.com/shankar5522)**
   
 # License
 No License is require.
