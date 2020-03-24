@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite_Facebook">
+  <test thread-count="5" name="TC_FB_Login">
+    <classes>
+      <class name="assignment.lidolearning.TC_FB_Login"/>
+    </classes>
+  </test> <!-- TC_FB_Login -->
+</suite> <!-- Suite_Facebook -->
